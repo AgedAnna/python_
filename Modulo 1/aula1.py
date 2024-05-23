@@ -1,8 +1,13 @@
-print("123")
+# print("123") comentário
 
-def soma (n1, n2):
-    sum = n1 + n2
-    return sum
+"""
+Isso é um DocString
+Não é um comentário mas funciona como um
+"""
+
+# sep="," separador
+# end="," final do print
 
 
-print(soma(8,5))
+print(12, 34, 56, sep=",", end='\n##')
+
