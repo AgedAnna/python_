@@ -5,4 +5,11 @@ b = int(input("Digite n2: "))
 
 c = int
 
+if a == b:
+    c = a +b
+    print(c)
+else:
+    c = a * b
+    print(c)
+
 
