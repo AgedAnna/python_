@@ -1,14 +1,33 @@
-## Escreva um algoritmo que leia o número de identificação, as 3 notas obtidas por um aluno nas 3 verificações e a média dos exercícios que fazem parte da avaliação, e calcule a média de aproveitamento, usando a fórmula:
-# MA := (nota1 + nota 2 * 2 + nota 3 * 3 + ME)/7
-# A atribuição dos conceitos obedece a tabela abaixo. O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, o conceito correspondente e a mensagem 'Aprovado' se o conceito for A, B ou C, e 'Reprovado' se o conceito for D ou E.
-# Média de aproveitamento Conceito 
-# >= 90 A
-# >= 75 e < 90 B >= 60 e < 75 C >= 40 e < 60 D < 40 E
+def calcular_conceito():
+    numero_aluno = input("Digite o número de identificação do aluno: ")
+    nota1 = float(input("Digite a primeira nota: "))
+    nota2 = float(input("Digite a segunda nota: "))
+    nota3 = float(input("Digite a terceira nota: "))
+    media_exercicios = float(input("Digite a média dos exercícios: "))
 
-n1 = float(input("Digite a nota 1: "))
-n2 = float(input("Digite a nota 1: "))
-n3 = float(input("Digite a nota 1: "))
-me = float(input("Digite a média dos exercícios: "))
+    media_aproveitamento = (nota1 + nota2 * 2 + nota3 * 3 + media_exercicios) / 7
 
-ma = (n1 + n2 * 2 + n3 * 3 + me)/7
+    if media_aproveitamento >= 90:
+        conceito = 'A'
+        status = 'Aprovado'
+    elif media_aproveitamento >= 75:
+        conceito = 'B'
+        status = 'Aprovado'
+    elif media_aproveitamento >= 60:
+        conceito = 'C'
+        status = 'Aprovado'
+    elif media_aproveitamento >= 40:
+        conceito = 'D'
+        status = 'Reprovado'
+    else:
+        conceito = 'E'
+        status = 'Reprovado'
 
+    print(f"\nNúmero do Aluno: {numero_aluno}")
+    print(f"Notas: {nota1}, {nota2}, {nota3}")
+    print(f"Média dos Exercícios: {media_exercicios:.2f}")
+    print(f"Média de Aproveitamento: {media_aproveitamento:.2f}")
+    print(f"Conceito: {conceito}")
+    print(f"Resultado: {status}")
+
+calcular_conceito()
